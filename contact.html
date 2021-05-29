@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <!--------- CSS Linkage --------->
+    <link rel="stylesheet" href="style.css">
+
+    <!--------- Font Awesome cdn Linkage --------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<style>
+
+    .navigation{
+        border-bottom:  .5px solid #242424;
+        width: 95vw;
+        margin: 0 auto;
+    }
+</style>
+
+<body>
+    
+    <!--------- Login Form  --------->
+    <div class="container" id="logForm">
+        <div class="close"></div>
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Welcome back</h2>
+                    <p>Signin to continue</p>
+                    <form>
+                        <input type="email" class="input-box" placeholder="Your username or email..." required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">LOGIN</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()">Register now</button>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>Create Account</h2>
+                    <p>Create an account to enjoy more features</p>
+                    <form>
+                        <input type="text" class="input-box" placeholder="Your Name" required>
+                        <input type="email" class="input-box" placeholder="Your Email Id" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">Sign Up</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">Already have an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- Login Form End --------->
+
+
+    <!--------- Navigation --------->
+    <nav class="navigation">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="" class="genre">GENRE
+                    <div class="box">
+                        <span>action</span>
+                        <span>Adventure</span>
+                        <span>Cars</span>
+                        <span>Comedy</span>
+                        <span>Fantacy</span>
+                        <span>Drama</span>
+                        <span>Demons</span>
+                        <span>More...</span>
+                    </div>
+                </a></li>
+                <li><a href="">NEWEST</a></li>
+                <li><a href="">UPDATES</a></li>
+                <li><a href="">ONGOING</a></li>
+                <li><a href="">RECENTLY ADDED</a></li>
+                <li><a href="" class="type">TYPES
+                    <div class="box">
+                        <span>TV Series</span>
+                        <span>Movies</span>
+                        <span>OVAs</span>
+                        <span>ONAs</span>
+                        <span>Specials</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="log-in-icon" id="Log"><i class="far fa-user-circle"></i></div>
+        <div class="toggle-icon" id="toggle">
+            <i class="fas fa-bars"></i>
+            <div class="box-box" style="position: relative; z-index: 10000;">
+                <div class="box">
+                    <span>GENRE</span>
+                    <span>NEWEST</span>
+                    <span>UPDATES</span>
+                    <span>ONGOING</span>
+                    <span>RECENTLY ADDED</span>
+                    <span>TYPES</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--------- Navigation End --------->
+    
+    <!--------- Contact Section --------->
+    <section class="contact">
+        <h1>CONTACT</h1>
+        <p>Email: animesugebox@gmail.com</p>
+    </section>
+    <!--------- Contact Section End --------->
+    
+    <!--------- Scroll Up --------->
+    <div class="scroll-up">
+        <a href="#"><i class="fas fa-chevron-up"></i> BACK TO TOP</a>
+    </div>
+    <!--------- Scroll Up End --------->
+
+
+
+    <!--------- Fotter --------->
+    <footer>
+        <div class="footer-list">
+            <ul>
+                <li><a href="atoz.html"> A-Z List</a></li>
+                <li><a href="most_watched.html"> Most Watched</a></li>
+                <li><a href="recently_added.html"> Recently Added</a></li>
+                <li><a href="upcomming.html"> Upcoming</a></li>
+                <li><a href="faq.html"> FAQ</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+            </ul>
+            <div class="twitter">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="fotter-bottom">
+            <div class="foot-1">
+                <img src="logo2.png" alt="logo">
+                <p>Copyright &copy; AnimeSuge.io. All Rights Reserved</p>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
+            </div>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> for anime users!</p>
+    </footer>
+    <!--------- Fotter End --------->
+
+
+    <!--------- Javascript Linkage --------->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).on('click', 'ul li', function(){
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    </script>
+
+</body>
+</html>

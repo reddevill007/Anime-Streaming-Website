@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+
+    <!--------- CSS Linkage --------->
+    <link rel="stylesheet" href="style.css">
+
+    <!--------- Font Awesome cdn Linkage --------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<style>
+
+    .navigation{
+        border-bottom:  .5px solid #242424;
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .share-links{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.share-links .share-box{
+    font-size: 11px;
+    line-height: 16px;
+    height: 16px;
+    color: rgb(238, 238, 238);
+    background-color: rgb(65, 65, 65);
+    height: 26px;
+    margin-right: 3px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease;
+}
+
+.share-links .share-box:last-child{
+    width: 130px;
+}
+
+.share-links .share-box:last-child:hover{
+    transform: translateY(0);
+}
+
+.share-links .share-box:hover{
+    transform: translateY(-3px);
+}
+
+@media (max-width: 980px){
+    .share-links .share-box span{
+        display: none;
+    }
+    .share-links .share-box{
+        height: 26px;
+        width: 26px;
+    }
+}
+
+</style>
+
+<body>
+    
+    <!--------- Login Form  --------->
+    <div class="container" id="logForm">
+        <div class="close"></div>
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Welcome back</h2>
+                    <p>Signin to continue</p>
+                    <form>
+                        <input type="email" class="input-box" placeholder="Your username or email..." required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">LOGIN</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()">Register now</button>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>Create Account</h2>
+                    <p>Create an account to enjoy more features</p>
+                    <form>
+                        <input type="text" class="input-box" placeholder="Your Name" required>
+                        <input type="email" class="input-box" placeholder="Your Email Id" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">Sign Up</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">Already have an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- Login Form End --------->
+
+
+    <!--------- Navigation --------->
+    <nav class="navigation">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="" class="genre">GENRE
+                    <div class="box">
+                        <span>action</span>
+                        <span>Adventure</span>
+                        <span>Cars</span>
+                        <span>Comedy</span>
+                        <span>Fantacy</span>
+                        <span>Drama</span>
+                        <span>Demons</span>
+                        <span>More...</span>
+                    </div>
+                </a></li>
+                <li><a href="">NEWEST</a></li>
+                <li><a href="">UPDATES</a></li>
+                <li><a href="">ONGOING</a></li>
+                <li><a href="">RECENTLY ADDED</a></li>
+                <li><a href="" class="type">TYPES
+                    <div class="box">
+                        <span>TV Series</span>
+                        <span>Movies</span>
+                        <span>OVAs</span>
+                        <span>ONAs</span>
+                        <span>Specials</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="log-in-icon" id="Log"><i class="far fa-user-circle"></i></div>
+        <div class="toggle-icon" id="toggle">
+            <i class="fas fa-bars"></i>
+            <div class="box-box" style="position: relative; z-index: 10000;">
+                <div class="box">
+                    <span>GENRE</span>
+                    <span>NEWEST</span>
+                    <span>UPDATES</span>
+                    <span>ONGOING</span>
+                    <span>RECENTLY ADDED</span>
+                    <span>TYPES</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--------- Navigation End --------->
+    
+
+    <!--------- FAQ Section --------->
+    <section class="faq">
+        <h1>FAQ</h1>
+        <div class="question-container">
+            <div class="questions">
+                <h2>What does "suge" mean ?</h2>
+                <p>すけえ / すけー (Written as ‘suge’) (Pronounced: Soo-geh): This is a way to show amazement or fascination towards something, it can also be a way of saying ‘wow’ and another way of stating something amazing. Yeap, of course we know what's an amazing anime streaming website should have and that's why AnimeSuge was created.</p>
+            </div>
+    
+            <div class="questions">
+                <h2>Is it legal to watch anime at AnimeSuge ?</h2>
+                <p>Bring happiness and the best watching experience to all people who loves anime on the world. Of course, fast updating, easy to use, fast streaming also are what we're doing</p>
+            </div>
+    
+            <div class="questions">
+                <h2>What is the mission of AnimeSuge ?</h2>
+                <p>Bring happiness and the best watching experience to all people who loves anime on the world. Of course, fast updating, easy to use, fast streaming also are what we're doing.</p>
+            </div>
+    
+            <div class="questions">
+                <h2>How AnimeSuge works ?</h2>
+                <p>AnimeSuge is nearly full automated video search engine. It does automated scans of streaming websites and lists the best quality videos it found. With AnimeSuge, you can easily find and watch any anime you want. It have almost every anime you want to watch.</p>
+            </div>
+    
+            <div class="questions">
+                <h2>How to support us ?</h2>
+                <p>The best way to support us at this time is sharing the site with your friends, let them know what's the best way to watch anime online in high quality for free.
+                    <div class="share-links">
+                        <a href="#" class="share-box"><i class="fab fa-facebook-f"></i><span>&nbsp;&nbsp;&nbsp; Facebook</span></a>
+                        <a href="#" class="share-box"><i class="fab fa-twitter"></i> <span>&nbsp;&nbsp;&nbsp; Twitter</span></a>
+                        <a href="#" class="share-box"><i class="fab fa-pinterest-p"></i> <span>&nbsp;&nbsp;&nbsp; Pinterest</span></a>
+                        <a href="#" class="share-box"><i class="fab fa-telegram-plane"></i> <span>&nbsp;&nbsp;&nbsp; Telegram</span></a>
+                        <a href="#" class="share-box"><i class="fab fa-facebook-messenger"></i> <span>&nbsp;&nbsp;&nbsp; Messanger</span></a>
+                        <a href="#" class="share-box"><i class="fas fa-plus"></i> <span>&nbsp;&nbsp;&nbsp; More</span> <span>&nbsp;&nbsp;&nbsp; 74.4K</span></a>
+                    </div>
+                </p>
+            </div>
+    
+            <div class="questions">
+                <p>Made with <i style="color: rgb(248, 8, 8);" class="fas fa-heart"></i> for anime users.</p>
+            </div>
+        </div>
+    </section>
+    <!--------- FAQ Section End --------->
+    
+    
+    <!--------- Scroll Up --------->
+    <div class="scroll-up">
+        <a href="#"><i class="fas fa-chevron-up"></i> BACK TO TOP</a>
+    </div>
+    <!--------- Scroll Up End --------->
+
+
+
+    <!--------- Fotter --------->
+    <footer>
+        <div class="footer-list">
+            <ul>
+                <li><a href="atoz.html"> A-Z List</a></li>
+                <li><a href="most_watched.html"> Most Watched</a></li>
+                <li><a href="recently_added.html"> Recently Added</a></li>
+                <li><a href="upcomming.html"> Upcoming</a></li>
+                <li><a href="faq.html"> FAQ</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+            </ul>
+            <div class="twitter">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="fotter-bottom">
+            <div class="foot-1">
+                <img src="logo2.png" alt="logo">
+                <p>Copyright &copy; AnimeSuge.io. All Rights Reserved</p>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p>
+            </div>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> for anime users!</p>
+    </footer>
+    <!--------- Fotter End --------->
+
+
+    <!--------- Javascript Linkage --------->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).on('click', 'ul li', function(){
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Straming Website</title>
+
+    <!--------- CSS Linkage --------->
+    <link rel="stylesheet" href="style.css">
+
+    <!--------- Font Awesome cdn Linkage --------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!--------- Login Form  --------->
+    <div class="container" id="logForm">
+        <div class="close"></div>
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Welcome back</h2>
+                    <p>Signin to continue</p>
+                    <form>
+                        <input type="email" class="input-box" placeholder="Your username or email..." required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">LOGIN</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()">Register now</button>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>Create Account</h2>
+                    <p>Create an account to enjoy more features</p>
+                    <form>
+                        <input type="text" class="input-box" placeholder="Your Name" required>
+                        <input type="email" class="input-box" placeholder="Your Email Id" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">Sign Up</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">Already have an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- Login Form End --------->
+
+
+    <!--------- Navigation --------->
+    <nav class="navigation">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="" class="genre">GENRE
+                    <div class="box">
+                        <span>action</span>
+                        <span>Adventure</span>
+                        <span>Cars</span>
+                        <span>Comedy</span>
+                        <span>Fantacy</span>
+                        <span>Drama</span>
+                        <span>Demons</span>
+                        <span>More...</span>
+                    </div>
+                </a></li>
+                <li><a href="">NEWEST</a></li>
+                <li><a href="">UPDATES</a></li>
+                <li><a href="">ONGOING</a></li>
+                <li><a href="">RECENTLY ADDED</a></li>
+                <li><a href="" class="type">TYPES
+                    <div class="box">
+                        <span>TV Series</span>
+                        <span>Movies</span>
+                        <span>OVAs</span>
+                        <span>ONAs</span>
+                        <span>Specials</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="log-in-icon" id="Log"><i class="far fa-user-circle"></i></div>
+        <div class="toggle-icon" id="toggle">
+            <i class="fas fa-bars"></i>
+            <div class="box-box" style="position: relative; z-index: 10000;">
+                <div class="box">
+                    <span>GENRE</span>
+                    <span>NEWEST</span>
+                    <span>UPDATES</span>
+                    <span>ONGOING</span>
+                    <span>RECENTLY ADDED</span>
+                    <span>TYPES</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--------- Navigation End --------->
+
+
+    <!--------- Home Section --------->
+    <section class="home">
+        <div class="home-img">
+            <img src="image4.jpg" alt="">
+        </div>
+        <form>
+            <input placeholder="Enter anime name...">
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        <div class="details">
+            <h1>WATCH ANIME ONLINE</h1>
+            <p>AnimeSuge is a free streaming anime website that allows you to <b>watch anime online in English subbed
+                    and dubbed</b>. Join us and <b>watch anime online for free</b> with ease. Easy access and no
+                registration is required. Our content is updated daily with beautiful layouts, fast streaming servers,
+                and great features that help you easily track and watch your favorite anime. We are confident AnimeSuge
+                is the best <b>free anime streaming site</b> in the space that you can't simply miss!<br>
+                Please help us by sharing this site with your friends. Thanks!</p>
+        </div>
+        <div class="share-links">
+            <a href="#" class="share-box"><i class="fab fa-facebook-f"></i><span>&nbsp;&nbsp;&nbsp; Facebook</span></a>
+            <a href="#" class="share-box"><i class="fab fa-twitter"></i> <span>&nbsp;&nbsp;&nbsp; Twitter</span></a>
+            <a href="#" class="share-box"><i class="fab fa-pinterest-p"></i> <span>&nbsp;&nbsp;&nbsp;
+                    Pinterest</span></a>
+            <a href="#" class="share-box"><i class="fab fa-telegram-plane"></i> <span>&nbsp;&nbsp;&nbsp;
+                    Telegram</span></a>
+            <a href="#" class="share-box"><i class="fab fa-facebook-messenger"></i> <span>&nbsp;&nbsp;&nbsp;
+                    Messanger</span></a>
+            <a href="#" class="share-box"><i class="fas fa-plus"></i> <span>&nbsp;&nbsp;&nbsp; More</span>
+                <span>&nbsp;&nbsp;&nbsp; 74.4K</span></a>
+        </div>
+    </section>
+    <!--------- Home Section End --------->
+
+
+
+    <!--------- Gallery Section --------->
+    <section class="gallery">
+        <div class="heading">
+            <h1>RECENTLY<br>UPDATED</h1>
+            <ul>
+                <li class="active" id="all">All</li>
+                <li id="subbed">Subbed</li>
+                <li id="dubbed">Dubbed</li>
+                <li id="chinese">Chinese</li>
+                <li id="trending">Trending</li>
+                <li id="random">Random</li>
+            </ul>
+            <div class="controls">
+                <i class="fas fa-angle-left"></i>&nbsp;&nbsp;&nbsp;<i
+                    class="fas fa-angle-right active"></i>&nbsp;&nbsp;&nbsp;<i class="fas fa-list"></i>&nbsp;&nbsp;<i
+                    class="fas fa-th active"></i>
+            </div>
+        </div>
+        <div class="gallery-container all">
+            <div class="gallery-card">
+                <img src="p1.jpg" alt="">
+                <h3>Galactus Patrol Lensman</h3>
+                <div class="hover-card">
+                    <h3>Galactus Patrol Lensman</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p2.jpg" alt="">
+                <h3>Chibi Revenger</h3>
+                <div class="hover-card">
+                    <h3>Chibi Revenger</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p3.jpg" alt="">
+                <h3>To Your Eternity</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p4.jpg" alt="">
+                <h3>Beyblade Burst Dynamite Battle</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p5.jpg" alt="">
+                <h3>Mars Red (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p6.png" alt="">
+                <h3>Odd Taxi</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p7.jpg" alt="">
+                <h3>Mars Red</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p8.jpg" alt="">
+                <h3>Fruite Basket: The Final</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p9.jpg" alt="">
+                <h3>GLOMMY The Naughty Grizzy</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p10.jpg" alt="">
+                <h3>Nomad: Megalo Box 2</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="gallery-card">
+                <img src="p11.jpg" alt="">
+                <h3>Let's Make a Mug Too</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="p12.jpg" alt="">
+                <h3>To Love Ru Darkness</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="gallery-container subbed">
+            <div class="gallery-card">
+                <img src="s1.jpg" alt="">
+                <h3>Kiyo in Kyoto: From the Maiko House</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s2.jpg" alt="">
+                <h3>Princess Principal Crown Handler
+                </h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s3.jpg" alt="">
+                <h3>Yu☆Gi☆Oh!: Sevens</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s4.jpg" alt="">
+                <h3>Cestvs: The Roman Fighter</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s5.jpg" alt="">
+                <h3>Kiratto Pri☆chan Season 3</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s6.jpg" alt="">
+                <h3>Hetalia World★Stars</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s7.jpg" alt="">
+                <h3>Godzilla Singular Point</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s8.jpg" alt="">
+                <h3>Super Cub</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s9.jpg" alt="">
+                <h3>Princess Principal Crown Handler</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s10.jpg" alt="">
+                <h3>Yuukoku no Moriarty 2nd Season</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s11.jpg" alt="">
+                <h3>The World Ends with You The Animation</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="s12.jpg" alt="">
+                <h3>Mini Dragon</h3>
+            </div>
+        </div>
+
+        <div class="gallery-container dubbed">
+            <div class="gallery-card">
+                <img src="d1.png" alt="">
+                <h3>Blade of the Immortal (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d2.jpg" alt="">
+                <h3>Cells at Work!! (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d3.jpg" alt="">
+                <h3>Cells at Work! CODE BLACK! (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d4.jpg" alt="">
+                <h3>So I'm a Spider, So What? (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d5.jpg" alt="">
+                <h3>Tomica Kizuna Gattai: Earth Granner (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d6.jpg" alt="">
+                <h3>My Hero Academia 5 (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d7.png" alt="">
+                <h3>Black Clover (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d8.jpg" alt="">
+                <h3>Jujutsu Kaisen (TV) (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d9.jpg" alt="">
+                <h3>Adachi and Shimamura (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d10.jpg" alt="">
+                <h3>Strike Witches: Road to Berlin (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d11.jpg" alt="">
+                <h3>Mr. Osomatsu (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d12.png" alt="">
+                <h3>Boruto: Naruto Next Generations (Dub)</h3>
+            </div>
+        </div>
+
+        <div class="gallery-container chinese">
+            <div class="gallery-card">
+                <img src="p3.jpg" alt="">
+                <h3>To Your Eternity</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p4.jpg" alt="">
+                <h3>Beyblade Burst Dynamite Battle</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p5.jpg" alt="">
+                <h3>Mars Red</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t1.jpg" alt="">
+                <h3>One Peice</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p12.jpg" alt="">
+                <h3>To Love Ru Darkness</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p6.png" alt="">
+                <h3>Odd Taxi</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t3.jpg" alt="">
+                <h3>One Peice</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d1.png" alt="">
+                <h3>Blade of the Immortal</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d2.jpg" alt="">
+                <h3>Cells at Work!!</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p5.jpg" alt="">
+                <h3>Mars Red</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p6.png" alt="">
+                <h3>Odd Taxi</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p7.jpg" alt="">
+                <h3>Mars Red</h3>
+            </div>
+        </div>
+
+        <div class="gallery-container trending">
+            <div class="gallery-card">
+                <img src="t1.jpg" alt="">
+                <h3>One Peice</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t2.jpg" alt="">
+                <h3>Naruto Shippudon (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t3.jpg" alt="">
+                <h3>One Peice (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t4.jpg" alt="">
+                <h3>The Seven Deadly Sins</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t5.jpg" alt="">
+                <h3>Full Dive: The Ultimat next-gen</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t6.jpg" alt="">
+                <h3>Naruto Shippudon</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t7.jpg" alt="">
+                <h3>Boku no Hero Acadmia</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t8.jpg" alt="">
+                <h3>Boruto</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t9.jpg" alt="">
+                <h3>Tokiyo Revenger</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t10.jpg" alt="">
+                <h3>Naruto (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t11.jpg" alt="">
+                <h3>Jujutsu Kaisen</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t12.png" alt="">
+                <h3>Demon Slayer: Kimitsu no Yiba</h3>
+            </div>
+        </div>
+
+        <div class="gallery-container random">
+            <div class="gallery-card">
+                <img src="p3.jpg" alt="">
+                <h3>To Your Eternity</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p4.jpg" alt="">
+                <h3>Beyblade Burst Dynamite Battle</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p5.jpg" alt="">
+                <h3>Mars Red (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t1.jpg" alt="">
+                <h3>One Peice</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t2.jpg" alt="">
+                <h3>Naruto Shippudon (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p6.png" alt="">
+                <h3>Odd Taxi</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="t3.jpg" alt="">
+                <h3>One Peice (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d1.png" alt="">
+                <h3>Blade of the Immortal (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d2.jpg" alt="">
+                <h3>Cells at Work!! (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d3.jpg" alt="">
+                <h3>Cells at Work! CODE BLACK! (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d4.jpg" alt="">
+                <h3>So I'm a Spider, So What? (Dub)</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="d5.jpg" alt="">
+                <h3>Tomica Kizuna Gattai: Earth Granner (Dub)</h3>
+            </div>
+        </div>
+    </section>
+    <!--------- Gallery Section End --------->
+
+
+    <!--------- Update Section --------->
+    <section class="update">
+        <div class="left">
+            <div class="details">
+                <h3>ESTIMATED <br> SCHEDULE</h3>
+                <p>5/27/2021 3:25:09 AM - GMT</p>
+            </div>
+            <div class="days">
+                <div class="prev">YESTERDAY</div>
+                <div class="now active">TODAY</div>
+                <div class="next">TOMORROW</div>
+            </div>
+            <div class="sub-details">
+                <span>03:00</span><a href="#"> Gorilla Singular Point </a><span>- EP 10</span>
+            </div>
+            <div class="sub-details">
+                <span>08:00</span><a href="#"> So I'm a Spider, So What? </a><span>- EP 9</span>
+            </div>
+            <div class="sub-details">
+                <span>08:55</span><a href="#"> SSSS.Dynazenon </a><span>- EP 18</span>
+            </div>
+            <div class="sub-details">
+                <span>08:55</span><a href="#"> D4DJ Petit Mix </a><span>- EP 6</span>
+            </div>
+            <div class="sub-details">
+                <span>14:00</span><a href="#"> D4DJ Petit Mix </a><span>- EP 7</span>
+            </div>
+            <div class="sub-details">
+                <span>14:30</span><a href="#"> D4DJ Petit Mix </a><span>- EP 8</span>
+            </div>
+            <div class="sub-details">
+                <span>15:00</span><a href="#"> D4DJ Petit Mix </a><span>- EP 9</span>
+            </div>
+            <div class="sub-details">
+                <span>15:00</span><a href="#"> Black Arrow </a><span>- EP 10</span>
+            </div>
+            <div class="sub-details">
+                <span>15:00</span><a href="#"> Burning Kabbadi </a><span>- EP 10</span>
+            </div>
+            <div class="sub-details">
+                <span>15:00</span><a href="#"> Those Snow White Notes </a><span>- EP 10</span>
+            </div>
+
+        </div>
+
+        <div class="middle">
+            <div class="details">
+                <h3>TOP <br> ANIME</h3>
+                <p style="cursor: pointer;"><span
+                        style="color: #fff;">Day</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Week&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Month</p>
+            </div>
+
+            <div class="main">
+                <div class="img-container">
+                    <div class="blank">
+                        <h1>01</h1>
+                    </div>
+                    <div class="trending-img">
+                        <img src="m2.jpg" alt="">
+                    </div>
+                </div>
+                <h1>Naruto: Shippuden (Dub)</h1>
+                <div class="anime-stat">
+                    <i class="far fa-eye"></i> 36,709 &nbsp;&nbsp; <i class="far fa-heart"></i> 23,945
+                </div>
+            </div>
+
+            <div class="main-sub">
+                <div class="ms-img">
+                    <div class="blank">02</div>
+                    <img src="t1.jpg" alt="image">
+                </div>
+                <div class="ms-det">
+                    <h1>One Piece</h1>
+                    <div class="anime-stat">
+                        <i class="far fa-eye"></i> 34,088 &nbsp;&nbsp; <i class="far fa-heart"></i> 13,287
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-sub">
+                <div class="ms-img">
+                    <div class="blank">03</div>
+                    <img src="t1.jpg" alt="image">
+                </div>
+                <div class="ms-det">
+                    <h1>One Piece (Dub)</h1>
+                    <div class="anime-stat">
+                        <i class="far fa-eye"></i> 26,850 &nbsp;&nbsp; <i class="far fa-heart"></i> 10,793
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-sub">
+                <div class="ms-img">
+                    <div class="blank">04</div>
+                    <img src="m3.jpg" alt="image">
+                </div>
+                <div class="ms-det">
+                    <h1>How Not to Summon...</h1>
+                    <div class="anime-stat">
+                        <i class="far fa-eye"></i> 15,906 &nbsp;&nbsp; <i class="far fa-heart"></i> 7,130
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-sub">
+                <div class="ms-img">
+                    <div class="blank">05</div>
+                    <img src="t6.jpg" alt="image">
+                </div>
+                <div class="ms-det">
+                    <h1>Naruto: Shippuden</h1>
+                    <div class="anime-stat">
+                        <i class="far fa-eye"></i> 10,404 &nbsp;&nbsp; <i class="far fa-heart"></i> 13,917
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <div class="details">
+                <h3>RECENTLY <br> ADDED </h3>
+                <p style="border-bottom: 1px solid #6d6d6d; cursor: pointer;">View all</p>
+            </div>
+            
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Babylon (Dub)</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 28 min/ep</p>
+                </div>
+            </div>
+            
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Higurashi: When They Cry – Gou (Dub) </h1>
+                    <p>Ep 21/24 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 30 min/ep</p>
+                </div>
+            </div>
+            
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Fairy Ranmaru: Anata no Kokoro Otasuke Shimasu</h1>
+                    <p>Ep 5/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 24 min/ep</p>
+                </div>
+            </div>
+            
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Zombie Land Saga Revenge</h1>
+                    <p>Ep 8/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 124min</p>
+                </div>
+            </div>
+            
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r5.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>SD GUNDAM WORLD HEROES</h1>
+                    <p>Ep 8/8 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 14 min/ep</p>
+                </div>
+            </div>
+            
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <!--------- Update Section End --------->
+
+    <!--------- Scroll Up --------->
+    <div class="scroll-up">
+        <a href="#"><i class="fas fa-chevron-up"></i> BACK TO TOP</a>
+    </div>
+    <!--------- Scroll Up End --------->
+
+
+    <!--------- Fotter --------->
+    <footer>
+        <div class="footer-list">
+            <ul>
+                <li><a href="atoz.html"> A-Z List</a></li>
+                <li><a href="most_watched.html"> Most Watched</a></li>
+                <li><a href="recently_added.html"> Recently Added</a></li>
+                <li><a href="upcomming.html"> Upcoming</a></li>
+                <li><a href="faq.html"> FAQ</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+            </ul>
+            <div class="twitter">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="fotter-bottom">
+            <div class="foot-1">
+                <img src="logo2.png" alt="logo">
+                <p>Copyright &copy; AnimeSuge.io. All Rights Reserved</p>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This site does not store any files on its server. All contents are provided by
+                    non-affiliated third parties.</p>
+            </div>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> for anime users!</p>
+    </footer>
+    <!--------- Fotter End --------->
+
+
+    <!--------- Javascript Linkage --------->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).on('click', 'ul li', function () {
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Watched</title>
+
+    <!--------- CSS Linkage --------->
+    <link rel="stylesheet" href="style.css">
+
+    <!--------- Font Awesome cdn Linkage --------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<style>
+    .navigation {
+        border-bottom: .5px solid #242424;
+        width: 95vw;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        color: #e9ecef;
+        font-size: 1.5em;
+        line-height: .95em;
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        width: 95vw;
+        margin-bottom: 0 auto;
+        margin-bottom: 15px;
+    }
+
+    .gallery-container {
+        display: grid;
+        width: 95vw;
+        margin: 0 auto;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(2, 320px);
+        grid-auto-flow: row dense;
+        justify-content: center;
+        align-content: center;
+        grid-gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-container .gallery-card:hover .hover-card {
+        display: block;
+        transition-delay: 2s;
+    }
+
+    .gallery-container .gallery-card .hover-card {
+        position: absolute;
+        top: 0;
+        right: -10px;
+        background: rgb(0, 0, 0);
+        width: 350px;
+        transform: translateX(100%);
+        z-index: 10;
+        color: white;
+        padding: 15px;
+        border: 1px solid #e9ecef;
+        padding-bottom: 35px;
+        display: none;
+    }
+
+    .gallery-container .gallery-card .hover-card .buttons {
+        position: absolute;
+        bottom: -12.5px;
+    }
+
+    .gallery-container .gallery-card .hover-card .buttons a {
+        border: 1px solid #e9ecef;
+        height: 25px;
+        padding: 8px;
+        color: #e9ecef;
+        margin-right: 20px;
+        background: rgb(0, 0, 0);
+    }
+
+    .gallery-container .gallery-card .hover-card .buttons a:hover {
+        background: #353535;
+    }
+
+    .gallery-container .gallery-card .hover-card h3 {
+        text-align: left;
+        color: #e9ecef;
+        margin-bottom: 8px;
+    }
+
+    .gallery-container .gallery-card .hover-card p {
+        font-weight: 400;
+        margin-top: 15px;
+        font-size: .75em;
+        overflow: hidden;
+        color: #6d6d6d;
+    }
+
+    .gallery-container .gallery-card .hover-card .stats {
+        color: #e9ecef;
+    }
+
+    .gallery-container .gallery-card .hover-card .stats span {
+        color: #6d6d6d;
+    }
+
+    .gallery-container .gallery-card .hover-card>span {
+        font-weight: 500;
+        display: inline-block;
+        padding: 5px 6px 1px;
+        margin-right: 6px;
+        font-size: .8em;
+        background: #353535;
+        color: #ababab;
+    }
+
+    .gallery-container .gallery-card:nth-child(5) .hover-card,
+    .gallery-container .gallery-card:nth-child(6) .hover-card,
+    .gallery-container .gallery-card:nth-child(11) .hover-card,
+    .gallery-container .gallery-card:nth-child(12) .hover-card {
+        transform: translateX(-103%);
+        left: 0;
+    }
+
+    .gallery-container .gallery-card {
+        width: 185px;
+        height: 340px;
+        position: relative;
+        transition: all .5 s ease;
+        transition-delay: 3s;
+        cursor: pointer;
+    }
+
+    .gallery-container .gallery-card h3 {
+        text-align: center;
+        color: #b7c0c8;
+        font-size: 18px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    .gallery-container .gallery-card h3:hover {
+        color: #6d6d6d;
+    }
+
+    .gallery-container .gallery-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 1220px) {
+        .gallery-container {
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(3, 320px);
+        }
+    }
+
+    @media (max-width: 1100px) {
+        .gallery-container {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 320px);
+        }
+    }
+
+    @media (max-width: 822px) {
+        .gallery-container {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 320px);
+        }
+
+        .heading .controls {
+            top: 30px;
+        }
+
+        .heading h1 {
+            top: -20px;
+        }
+
+        .heading ul {
+            margin-left: 0;
+            padding: 0;
+            margin-top: 20px;
+            padding-top: 30px;
+        }
+    }
+
+    @media (max-width: 614px) {
+        .gallery-container {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 320px);
+        }
+    }
+
+    @media (max-width: 390px) {
+        .gallery-container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        .gallery-container .gallery-card {
+            width: 60vw;
+            height: 340px;
+            margin: 0 auto;
+        }
+    }
+</style>
+
+<body>
+
+    <!--------- Login Form  --------->
+    <div class="container" id="logForm">
+        <div class="close"></div>
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Welcome back</h2>
+                    <p>Signin to continue</p>
+                    <form>
+                        <input type="email" class="input-box" placeholder="Your username or email..." required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">LOGIN</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()">Register now</button>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>Create Account</h2>
+                    <p>Create an account to enjoy more features</p>
+                    <form>
+                        <input type="text" class="input-box" placeholder="Your Name" required>
+                        <input type="email" class="input-box" placeholder="Your Email Id" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">Sign Up</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">Already have an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- Login Form End --------->
+
+
+    <!--------- Navigation --------->
+    <nav class="navigation">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="" class="genre">GENRE
+                    <div class="box">
+                        <span>action</span>
+                        <span>Adventure</span>
+                        <span>Cars</span>
+                        <span>Comedy</span>
+                        <span>Fantacy</span>
+                        <span>Drama</span>
+                        <span>Demons</span>
+                        <span>More...</span>
+                    </div>
+                </a></li>
+                <li><a href="">NEWEST</a></li>
+                <li><a href="">UPDATES</a></li>
+                <li><a href="">ONGOING</a></li>
+                <li><a href="">RECENTLY ADDED</a></li>
+                <li><a href="" class="type">TYPES
+                    <div class="box">
+                        <span>TV Series</span>
+                        <span>Movies</span>
+                        <span>OVAs</span>
+                        <span>ONAs</span>
+                        <span>Specials</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="log-in-icon" id="Log"><i class="far fa-user-circle"></i></div>
+        <div class="toggle-icon" id="toggle">
+            <i class="fas fa-bars"></i>
+            <div class="box-box" style="position: relative; z-index: 10000;">
+                <div class="box">
+                    <span>GENRE</span>
+                    <span>NEWEST</span>
+                    <span>UPDATES</span>
+                    <span>ONGOING</span>
+                    <span>RECENTLY ADDED</span>
+                    <span>TYPES</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--------- Navigation End --------->
+
+    <!--------- Most Watched Section --------->
+    <section>
+        <h1>Most Watched</h1>
+        <div class="gallery-container">
+            <div class="gallery-card">
+                <img src="p3.jpg" alt="">
+                <h3>To Your Eternity</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="p4.jpg" alt="">
+                <h3>Beyblade Burst Dynamite Battle</h3>
+            </div>
+            <div class="gallery-card">
+                <img src="p5.jpg" alt="">
+                <h3>Mars Red (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="t1.jpg" alt="">
+                <h3>One Peice</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="t2.jpg" alt="">
+                <h3>Naruto Shippudon (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="p6.png" alt="">
+                <h3>Odd Taxi</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="t3.jpg" alt="">
+                <h3>One Peice (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="d1.png" alt="">
+                <h3>Blade of the Immortal (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="d2.jpg" alt="">
+                <h3>Cells at Work!! (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="d3.jpg" alt="">
+                <h3>Cells at Work! CODE BLACK! (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="d4.jpg" alt="">
+                <h3>So I'm a Spider, So What? (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <img src="d5.jpg" alt="">
+                <h3>Tomica Kizuna Gattai: Earth Granner (Dub)</h3>
+                <div class="hover-card">
+                    <h3>To Your Eternity</h3>
+                    <span>Episode 9/32</span> <span>TV Series</span>
+                    <p>Kiyo and Sumire came to Kyoto from Aomori Prefecture, dreaming of becoming maiko. But after an
+                        unexpected turn of events, Kiyo starts working as the</p>
+                    <p class="stats">
+                        <span>Other names:</span> Kiyo in Kyoto: From the Maiko House
+                    </p>
+                    <p class="stats">
+                        <span>Scores:</span> 6.59
+                    </p>
+                    <p class="stats">
+                        <span>Date aired:</span> Feb 25, 2021 to ...
+                    </p>
+                    <p class="stats">
+                        <span>Status:</span> Airing
+                    </p>
+                    <p class="stats">
+                        <span>Genre:</span> Comedy, Shounen, Slice of Life
+                    </p>
+                    <div class="buttons">
+                        <a href="#"><i class="fas fa-play"></i> Watch Now</a>
+                        <a href="#">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--------- Most Watched Section End --------->
+
+    <!--------- Scroll Up --------->
+    <div class="scroll-up">
+        <a href="#"><i class="fas fa-chevron-up"></i> BACK TO TOP</a>
+    </div>
+    <!--------- Scroll Up End --------->
+
+
+
+    <!--------- Fotter --------->
+    <footer>
+        <div class="footer-list">
+            <ul>
+                <li><a href="atoz.html"> A-Z List</a></li>
+                <li><a href="most_watched.html"> Most Watched</a></li>
+                <li><a href="recently_added.html"> Recently Added</a></li>
+                <li><a href="upcomming.html"> Upcoming</a></li>
+                <li><a href="faq.html"> FAQ</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+            </ul>
+            <div class="twitter">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="fotter-bottom">
+            <div class="foot-1">
+                <img src="logo2.png" alt="logo">
+                <p>Copyright &copy; AnimeSuge.io. All Rights Reserved</p>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This site does not store any files on its server. All contents are provided by
+                    non-affiliated third parties.</p>
+            </div>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> for anime users!</p>
+    </footer>
+    <!--------- Fotter End --------->
+
+
+    <!--------- Javascript Linkage --------->
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).on('click', 'ul li', function () {
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    </script>
+
+</body>
+
+</html>

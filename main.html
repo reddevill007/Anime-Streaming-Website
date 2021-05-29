@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Shippudon (DUB)</title>
+
+    <!--------- CSS Linkage --------->
+    <link rel="stylesheet" href="style.css">
+
+    <!--------- Font Awesome cdn Linkage --------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+
+<style>
+    .navigation {
+        border-bottom: .5px solid #242424;
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    section.video {
+        display: flex;
+        width: 95vw;
+        margin-bottom: 20px;
+    }
+
+    section.video .hero {
+        width: 75%;
+        /* background-color: red; */
+    }
+
+    section.video .hero h1 {
+        color: #e9ecef;
+        font-weight: 500;
+        margin-top: 25px;
+    }
+
+    section.video .hero p {
+        padding: 10px;
+        font-size: 14px;
+        margin: 10px 0;
+        color: #856404;
+        background-color: #fff3cd;
+        border-color: #ffeeba;
+    }
+
+    section.video .hero .image-vid {
+        width: 100%;
+        height: calc(100vh - 150px);
+    }
+
+    section.video .hero .image-vid img {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+
+    section.video .hero .menu {
+        padding: 10px 0;
+        border-bottom: .5px solid #242424;
+    }
+
+    section.video .hero .menu span {
+        color: #ababab;
+        cursor: pointer;
+        padding: 8px;
+    }
+
+    section.video .hero .menu span:hover {
+        color: #e9ecef;
+    }
+
+    section.video .hero .ep {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    section.video .hero .ep li {
+        color: #ababab;
+        border: .5px solid #ababab;
+        width: calc(100% / 16);
+        height: 30px;
+        text-align: center;
+        float: left;
+        height: 33px;
+        line-height: 33px;
+        width: 55px;
+        margin: 3.8px;
+        font-weight: 400;
+        cursor: pointer;
+    }
+
+    section.video .hero .ep li:hover,
+    section.video .hero .ep li.active {
+        background-color: #ababab;
+        color: #121212;
+    }
+
+    section.video .right {
+        width: 30%;
+        padding: 0 15px;
+        margin-bottom: 6px;
+    }
+
+    section.video .right h1 {
+        color: #e9ecef;
+        font-weight: 500;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    section.video .right .mid-container {
+        display: flex;
+        margin-bottom: 10px;
+        height: 65px;
+    }
+
+    section.video .right .mid-container .img-container {
+        height: 65px;
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    section.video .right .mid-container .img-container img {
+        height: 65px;
+        width: 40px;
+        object-fit: cover;
+    }
+
+    section.video .right .mid-container .mid-detail {
+        height: 65px;
+    }
+
+    section.video .right .mid-container .mid-detail h1 {
+        font-size: 15px;
+        color: #b7c0c8;
+        font-weight: 400;
+        text-align: left;
+        padding-top: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    section.video .right .mid-container .mid-detail h1:hover {
+        color: #4b5157;
+    }
+
+    section.video .right .mid-container .mid-detail p {
+        color: #4b5157;
+    }
+
+    section.video .right .mid-container .mid-detail p i {
+        font-size: 4px;
+    }
+
+    @media (max-width:980px) {
+        section.video {
+            flex-direction: column;
+        }
+
+        section.video .right,
+        section.video .hero {
+            width: 100%;
+        }
+
+        section.video .hero .image-vid {
+            height: 30vh;
+        }
+    }
+
+    .support-us {
+        height: 100vh;
+        position: fixed;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, .6);
+        z-index: 50;
+    }
+
+    .support-us .support {
+        background-color: rgb(0, 0, 0);
+        position: relative;
+        padding: 2em;
+        width: 450px;
+    }
+
+    .support-us .support h1 {
+        color: #f8f9fa;
+        font-size: 1.47em;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+
+    .support-us .support p {
+        color: #4b5157;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .support-us .support a {
+        margin-top: 10px;
+        padding: 15px;
+        color: #e9ecef;
+        z-index: 60;
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+
+    .support-us .support a.fb {
+        background-color: rgb(59, 89, 152);
+    }
+
+    .support-us .support a.tweet {
+        background-color: rgb(29, 161, 242);
+    }
+
+    .support-us .support a i {
+        font-size: 30px;
+        text-align: center;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+    }
+
+    .support-us .support .close {
+        z-index: 100;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        height: 30px;
+        width: 30px;
+        background: rgb(83, 83, 83) url(close.png);
+        background-repeat: no-repeat;
+        background-size: 10px;
+        background-position: center;
+        cursor: pointer;
+        border-radius: 50%;
+        z-index: 110;
+    }
+</style>
+
+<body>
+
+    <!--------- Support us pop up  --------->
+    <div class="support-us" id="support-us">
+        <div class="support">
+            <h1>Sharing is caring</h1>
+            <p>It's the biggest motivation to help us to make the site better.</p>
+            <div class="share-button-pop">
+                <a href="#" class="fb"><i class="fab fa-facebook-f"></i>&nbsp;&nbsp;&nbsp; Facebook</a>
+                <a href="#" class="tweet"><i class="fab fa-twitter"></i>&nbsp;&nbsp;&nbsp;Twitter</a>
+            </div>
+            <div class="close" id="close"></div>
+        </div>
+    </div>
+    <!--------- Support us pop up End  --------->
+
+    <!--------- Login Form  --------->
+    <div class="container" id="logForm">
+        <div class="close"></div>
+        <div class="card">
+            <div class="inner-box" id="card">
+                <div class="card-front">
+                    <h2>Welcome back</h2>
+                    <p>Signin to continue</p>
+                    <form>
+                        <input type="email" class="input-box" placeholder="Your username or email..." required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">LOGIN</button>
+                        <input type="checkbox"><span>Remember Me</span>
+                    </form>
+                    <button type="button" class="btn" onclick="openRegister()">Register now</button>
+                    <a href="#">Forgot Password</a>
+                </div>
+                <div class="card-back">
+                    <h2>Create Account</h2>
+                    <p>Create an account to enjoy more features</p>
+                    <form>
+                        <input type="text" class="input-box" placeholder="Your Name" required>
+                        <input type="email" class="input-box" placeholder="Your Email Id" required>
+                        <input type="password" class="input-box" placeholder="Password" required>
+                        <button type="submit" class="btn-submit">Sign Up</button>
+                    </form>
+                    <button type="button" class="btn" onclick="openLogin()">Already have an account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------- Login Form End --------->
+
+
+    <!--------- Navigation --------->
+    <nav class="navigation">
+        <div class="logo">
+            <img src="logo2.png" alt="logo">
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="" class="genre">GENRE
+                    <div class="box">
+                        <span>action</span>
+                        <span>Adventure</span>
+                        <span>Cars</span>
+                        <span>Comedy</span>
+                        <span>Fantacy</span>
+                        <span>Drama</span>
+                        <span>Demons</span>
+                        <span>More...</span>
+                    </div>
+                </a></li>
+                <li><a href="">NEWEST</a></li>
+                <li><a href="">UPDATES</a></li>
+                <li><a href="">ONGOING</a></li>
+                <li><a href="">RECENTLY ADDED</a></li>
+                <li><a href="" class="type">TYPES
+                    <div class="box">
+                        <span>TV Series</span>
+                        <span>Movies</span>
+                        <span>OVAs</span>
+                        <span>ONAs</span>
+                        <span>Specials</span>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+        <div class="log-in-icon" id="Log"><i class="far fa-user-circle"></i></div>
+        <div class="toggle-icon" id="toggle">
+            <i class="fas fa-bars"></i>
+            <div class="box-box" style="position: relative; z-index: 10000;">
+                <div class="box">
+                    <span>GENRE</span>
+                    <span>NEWEST</span>
+                    <span>UPDATES</span>
+                    <span>ONGOING</span>
+                    <span>RECENTLY ADDED</span>
+                    <span>TYPES</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--------- Navigation End --------->
+
+    <!--------- Video Section --------->
+    <section class="video">
+        <div class="hero">
+            <h1>NARUTO: SHIPPUDEN (DUB)</h1>
+            <p>Please help us by sharing this site with your friends. It's the biggest motivation to help us to make the
+                site better. Thanks!</p>
+            <div class="image-vid">
+                <img src="vid.png" alt="hero">
+            </div>
+            <div class="menu">
+                <span><i class="fas fa-info-circle"></i> Info</span>
+                <span><i class="far fa-check-square"></i> Auto Play</span>
+                <span><i class="far fa-check-square"></i> Auto Next</span>
+                <span><i class="fas fa-adjust"></i> Light</span>
+                <span><i class="far fa-heart"></i> Add to list</span>
+                <span><i class="far fa-keyboard"></i> Shortcuts</span>
+                <span class="sup" id="sup"><i class="fas fa-share"></i> Support</span>
+            </div>
+            <div class="ep">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+                <li>32</li>
+                <li>33</li>
+                <li>34</li>
+                <li>35</li>
+                <li>36</li>
+                <li>37</li>
+                <li>38</li>
+                <li>39</li>
+                <li>40</li>
+                <li>41</li>
+                <li>42</li>
+                <li>43</li>
+                <li>44</li>
+                <li>45</li>
+                <li>46</li>
+                <li>47</li>
+                <li>48</li>
+                <li>49</li>
+                <li>50</li>
+                <li>51</li>
+                <li>52</li>
+                <li>53</li>
+                <li>54</li>
+                <li>55</li>
+                <li>56</li>
+                <li>57</li>
+                <li>58</li>
+                <li>59</li>
+                <li>60</li>
+            </div>
+        </div>
+        <div class="right">
+            <h1>Suggestions</h1>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r4.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Babylon (Dub)</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 28 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Higurashi: When They Cry – Gou (Dub) </h1>
+                    <p>Ep 21/24 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 30 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Fairy Ranmaru: Anata no Kokoro Otasuke Shimasu</h1>
+                    <p>Ep 5/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 24 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Zombie Land Saga Revenge</h1>
+                    <p>Ep 8/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 124min</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r5.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>SD GUNDAM WORLD HEROES</h1>
+                    <p>Ep 8/8 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 14 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+
+            <div class="mid-container">
+                <div class="img-container">
+                    <div class="trending-img">
+                        <img src="r6.jpg" alt="">
+                    </div>
+                </div>
+                <div class="mid-detail">
+                    <h1>Princess Principal Crown Handler</h1>
+                    <p>Ep 12/12 &nbsp;&nbsp; <i class="fas fa-circle"></i> &nbsp;&nbsp; 44 min/ep</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--------- Video Section End --------->
+
+    <!--------- Scroll Up --------->
+    <div class="scroll-up">
+        <a href="#"><i class="fas fa-chevron-up"></i> BACK TO TOP</a>
+    </div>
+    <!--------- Scroll Up End --------->
+
+
+
+    <!--------- Fotter --------->
+    <footer>
+        <div class="footer-list">
+            <ul>
+                <li><a href="atoz.html"> A-Z List</a></li>
+                <li><a href="most_watched.html"> Most Watched</a></li>
+                <li><a href="recently_added.html"> Recently Added</a></li>
+                <li><a href="upcomming.html"> Upcoming</a></li>
+                <li><a href="faq.html"> FAQ</a></li>
+                <li><a href="contact.html"> Contact</a></li>
+            </ul>
+            <div class="twitter">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="fotter-bottom">
+            <div class="foot-1">
+                <img src="logo2.png" alt="logo">
+                <p>Copyright &copy; AnimeSuge.io. All Rights Reserved</p>
+            </div>
+            <div class="disclaimer">
+                <p>Disclaimer: This site does not store any files on its server. All contents are provided by
+                    non-affiliated third parties.</p>
+            </div>
+        </div>
+        <p>Made with <i class="fas fa-heart"></i> for anime users!</p>
+    </footer>
+    <!--------- Fotter End --------->
+
+
+    <!--------- Javascript Linkage --------->
+    <script src="app2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(document).on('click', 'li', function () {
+            $(this).addClass('active').siblings().removeClass('active')
+        })
+    </script>
+
+</body>
+
+</html>
