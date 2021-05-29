@@ -668,7 +668,7 @@ section.update .middle .main .blank h1{
     border-bottom: 4px solid #161616;
 }
 
-section.update .middle .main>h1{
+section.update .middle .main>h1 a{
     font-size: 22px;
     color: #b7c0c8;
     font-weight: 400;
@@ -678,7 +678,7 @@ section.update .middle .main>h1{
     cursor: pointer;
 }
 
-section.update .middle .main>h1:hover{
+section.update .middle .main>h1 a:hover{
     color: #4b5157;
 }
 
@@ -1062,8 +1062,8 @@ section.contact p{
         height: 530px;
     }
     .container .close{
-        top: 75px;
-        right: 40px;
+        top: 100px;
+        right: 100px;
     }
 }
 
